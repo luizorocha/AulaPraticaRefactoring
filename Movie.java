@@ -6,7 +6,7 @@ public class Movie {
 
   private String _title;
   private Price _price;
-  
+
   public Movie(String name, int priceCode) {
     _title = name;
     setPriceCode(priceCode);
@@ -41,10 +41,6 @@ public class Movie {
   }
 
   public int getFrequentRenterPoints(int daysRented) {
-    int frequentRenterPoints = 0;  
-    frequentRenterPoints ++;
-      // add bonus for a two day new release rental
-      if ((getPriceCode() == Movie.NEW_RELEASE) &&
-         daysRented > 1) frequentRenterPoints ++;
-   return frequentRenterPoints;
+    return _price.getFrequentRenterPoints(daysRented);
+  }
 }
